@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drug Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;            
+            background-image: url('static/health-drug-3d-rendering-of-content-medical-bottle-and-tablet-chart-for-application_9846041.jpg!w700wp');
+
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        
+        }
+        .form-container label {
+            
+            color: white;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+    h4,h3{
+        color:white
+        }
+      h2{
+        color:bisque
+      }  
+    
+    </style>
+</head>
+<body>
+    <h2><center>Drug Predict Test</center></h2>
+    <div class="form-container">
+        
+        <h3>*All the below fields accept numerical format only </h3>
+        <h4>*Age should be [0-200]</h4>
+        <h4>*Sex [Female-0 , Male-1] </h4>
+        <h4>*BP [Low-0, Medium-1,High-2]</h4>
+        <h4>*Cholestral [0-Normal 1-High]</h4>
+        <form action="/predict" method="post">
+            <label for="Age">Age:</label>
+            <input type="number" name="Age" required>
+            
+            <label for="Sex">Sex:</label>
+            <input type="number"  name="Sex" required>
+            
+            <label for="BP">BP:</label>
+            <input type="number" name="BP" required>
+            
+            <label for="Cholestrol">Cholestrol:</label>
+            <input type="number" name="Cholestrol" required>
+            
+            <label for="Na_to_K">Na_to_K:</label>
+            <input type="number"  name="Na_to_K" required>
+            
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

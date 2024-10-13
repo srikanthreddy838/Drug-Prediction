@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drug Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: bisque;
+        }
+        .result {
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2><center>Drug Predicted</center></h2>
+        <form action="/predict" method="post">
+        </form>
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        <br>
+        <br>
+        <center>
+            <img src="static/lovepik-medical-tablets-picture_500210324.jpg"></img>
+        </center>
+        
+        {% endif %}
+        
+    </div>
+    <br>
+    <br>
+    <br>
+    <center>
+        <a href="/">Back to home page</a>
+    </center>
+    
+</body>
+</html>
